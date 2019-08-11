@@ -42,9 +42,9 @@ struct outp_pack : public cadmium::out_port<Message_t>{};
 /********************************************/
 template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
-public:
-  ApplicationGen() = default;
-  ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
+   public:
+   ApplicationGen() = default;
+   ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
 };
 
 
@@ -54,11 +54,11 @@ int main(){
 
 /*************** Loggers *******************/
   static std::ofstream out_data("../test/data/sender/sender_test_output.txt");
-    struct oss_sink_provider{
-        static std::ostream& sink(){          
-            return out_data;
-        }
-    };
+  struct oss_sink_provider{
+     static std::ostream& sink(){          
+        return out_data;
+      }
+   };
 
 using info=cadmium::logger::logger<cadmium::logger::logger_info, cadmium::dynamic::logger::formatter<TIME>, oss_sink_provider>;
 using debug=cadmium::logger::logger<cadmium::logger::logger_debug, cadmium::dynamic::logger::formatter<TIME>, oss_sink_provider>;
@@ -105,22 +105,22 @@ cadmium::dynamic::modeling::Ports oports_TOP = {typeid(outp_data),typeid(outp_pa
 cadmium::dynamic::modeling::Models submodels_TOP = {generator_con, generator_ack, sender1};
 cadmium::dynamic::modeling::EICs eics_TOP = {};
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
-  cadmium::dynamic::translate::make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
-cadmium::dynamic::translate::make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1"),
-cadmium::dynamic::translate::make_EOC<Sender_defs::dataOut,outp_data>("sender1")
+    cadmium::dynamic::translate::make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
+    cadmium::dynamic::translate::make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1"),
+    cadmium::dynamic::translate::make_EOC<Sender_defs::dataOut,outp_data>("sender1")
 };
 cadmium::dynamic::modeling::ICs ics_TOP = {
-  cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Sender_defs::controlIn>("generator_con","sender1"),
-  cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Sender_defs::ackIn>("generator_ack","sender1")
+    cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Sender_defs::controlIn>("generator_con","sender1"),
+    cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Sender_defs::ackIn>("generator_ack","sender1")
 };
 std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
- "TOP", 
- submodels_TOP, 
- iports_TOP, 
- oports_TOP, 
- eics_TOP, 
- eocs_TOP, 
- ics_TOP 
+    "TOP", 
+     submodels_TOP, 
+     iports_TOP, 
+     oports_TOP, 
+     eics_TOP, 
+     eocs_TOP, 
+     ics_TOP 
   );
 
 ///****************////
