@@ -97,11 +97,9 @@ cadmium::dynamic::modeling::Ports oports_TOP = {typeid(outp_out)};
 cadmium::dynamic::modeling::Models submodels_TOP = {generator, subnet1};
 cadmium::dynamic::modeling::EICs eics_TOP = {};
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
-    cadmium::dynamic::translate::make_EOC<Subnet_defs::out,outp_out>("subnet1")
-};
+    cadmium::dynamic::translate::make_EOC<Subnet_defs::out,outp_out>("subnet1")};
 cadmium::dynamic::modeling::ICs ics_TOP = {
-    cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Subnet_defs::in>("generator","subnet1")
-};
+    cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,Subnet_defs::in>("generator","subnet1")};
 std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
     "TOP", 
     submodels_TOP, 
