@@ -96,8 +96,8 @@ class Receiver{
 	* is more than 1, it asserts that only one message is
         * expected per time unit. It then sets the acknowledge
 	* to the message value and state to sending.
-	* @param e time variable
-	* @param mbs message bags
+	* @param[in] e time variable
+	* @param[in] mbs message bags
 	*/
         void external_transition(TIME e, 
 		                         typename make_message_bags<input_ports>::type mbs) { 
