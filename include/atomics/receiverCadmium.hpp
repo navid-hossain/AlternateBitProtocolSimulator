@@ -55,7 +55,9 @@ class Receiver{
     using defs=receiver_defs; // putting definitions in context
     public:
         //Parameters to be overwriten when instantiating the atomic model
-        TIME   PREPARATION_TIME;
+        TIME   PREPARATION_TIME; /**< Constant that holds the time delay */
+	                         /**< from input to output. */
+				 /*!< Time delay Constant.*/
         
 	/** 
 	* Constructor for Receiver class.
