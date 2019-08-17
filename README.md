@@ -10,9 +10,11 @@
 
 ### Table of Content
 ---
-- [Introduction](#introduction)
-- [Files Management](#Files Management)
-- [Steps to Run Simulation](#Steps To Run Simulation) 
+- [Introduction](#Introduction)
+
+- [File Management](#File-Management)
+
+- [Steps to Run Simulation](#Steps-To-Run-Simulation) 
 
 
 ### Introduction
@@ -68,7 +70,7 @@
 	4. abp_output_1.txt
 ### makefile [make file to compile the project]
 	
-### Steps to Run Simulations
+### Steps to Run Simulation
 ---
 **alternatebitprotocol.doc contains the explanation of this simulator**
        
