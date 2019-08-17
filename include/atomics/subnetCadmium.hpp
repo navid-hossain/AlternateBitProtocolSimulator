@@ -47,7 +47,11 @@ struct subnet_defs{
     struct in : public in_port<message_t> {
     };
 };
-//This is a meta-model, it should be overloaded for declaring the "id" parameter
+
+/**
+ * The Subnet class receives message and
+ * transmits out same message with some delay.
+ */
 template<typename TIME>
 class Subnet{
     using defs=subnet_defs; // putting definitions in context
