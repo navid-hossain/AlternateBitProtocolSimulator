@@ -5,8 +5,16 @@
 ### Carleton University
 #### Authors
 ---
-**Main Developer**: Cristina Ruiz Martin
-**Modified by**: Tarim Islam & Navid Hossain
+**Main Developer**: Dr. [Cristina Ruiz Martin] (https://github.com/cruizm)<br>
+**Modified by**: [Tarim Islam] (https://github.com/tarimislam) & [Navid Hossain] (https://github.com/navid-hossain)
+
+### Table of Content
+---
+- [Introduction](#introduction)
+- [Files Management](#Files Management)
+- [Steps to Run Simulation](#Steps To Run Simulation) 
+
+
 ### Introduction
 ---
 ### Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
