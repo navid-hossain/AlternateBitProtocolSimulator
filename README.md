@@ -3,11 +3,13 @@
 ### FILES ORGANIZATION
 ---
 ### Carleton University
-#### Authors
 ---
+#### Authors
+
 **Main Developer**: Dr. [Cristina Ruiz Martin](https://github.com/cruizm)<br>
 **Modified by**: [Tarim Islam](https://github.com/tarimislam) & [Navid Hossain](https://github.com/navid-hossain)
 
+---
 ### Table of Content
 ---
 - [Introduction](#Introduction)
