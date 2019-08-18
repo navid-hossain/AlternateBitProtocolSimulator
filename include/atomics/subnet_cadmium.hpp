@@ -157,7 +157,13 @@ class Subnet{
         }    
         return next_internal;
     }
-
+    
+    /**
+    * Function that outputs acknowledge number to ostring stream.
+    * @param os the ostring stream
+    * @param i structure state_type
+    * @return os the ostring stream
+    */
     friend std::ostringstream& operator<<(std::ostringstream& os, 
 			                  const typename Subnet<TIME>::state_type& i) {
         os << "index: " << i.index << " & transmiting: " << i.transmiting; 
