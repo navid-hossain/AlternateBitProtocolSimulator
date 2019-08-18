@@ -55,12 +55,12 @@ template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
     public:
     ApplicationGen() = default;
-	/**
-	* It is a parameterized constructor for application generator class in which
-	* from file path it takes input of the path of the file that has input 
-	* for application to run
-	* @param[in] file_path
-	*/
+    /**
+     * It is a parameterized constructor for application generator class in which
+     * from file path it takes input of the path of the file that has input 
+     * for application to run
+     * @param[in] file_path
+     */
     ApplicationGen(const char* file_path) : 
     iestream_input<Message_t,T>(file_path){}
 };
@@ -70,16 +70,16 @@ int main(){
     //to measure simulation execution time
     auto start = hclock::now(); 
   
-/**
-* It produce log files of all the operation that cross 
-* through during the execution of this application and 
-* as a file type out_data it store all the log.    
-*/
+    /**
+     * It produce log files of all the operation that cross 
+     * through during the execution of this application and 
+     * as a file type out_data it store all the log.    
+     */
     static std::ofstream out_data("../test/data/receiver/receiver_test_output.txt");
-/**
-* The structure invoke the ostream which is the output stream and
-* as a return the data store in the file
-*/
+    /**
+     * The structure invoke the ostream which is the output stream and
+     *as a return the data store in the file
+     */
     struct oss_sink_provider{
        static std::ostream& sink(){          
           return out_data;
