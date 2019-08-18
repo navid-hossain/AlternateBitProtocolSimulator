@@ -67,7 +67,7 @@ class ApplicationGen : public iestream_input<Message_t,T> {
 
 
 int main(){
-    //to measure simulation execution time
+    // to measure simulation execution time
     auto start = hclock::now(); 
   
     /**
@@ -143,8 +143,8 @@ generator = cadmium::dynamic::translate::make_dynamic_atomic_model
 ("generator" , std::move(i_input_data_control));
 
 /**
-* This detect the output data comming from receiver1
-*/
+ * This detect the output data comming from receiver1
+ */
 	
 std::shared_ptr<cadmium::dynamic::modeling::model> receiver1 = cadmium::
 dynamic::translate::make_dynamic_atomic_model<Receiver, TIME>("receiver1");
