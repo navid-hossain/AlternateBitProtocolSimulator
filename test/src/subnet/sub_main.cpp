@@ -66,7 +66,7 @@ class ApplicationGen : public iestream_input<Message_t,T> {
 
 
 int main(){
-    //to measure simulation execution time
+    // to measure simulation execution time
     auto start = hclock::now(); 
 
    /**
