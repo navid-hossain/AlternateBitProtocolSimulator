@@ -33,21 +33,21 @@ using hclock=chrono::high_resolution_clock;
 using TIME = NDTime;
 
 
-/*
+/**
  * SETING INPUT PORTS FOR messages
-**/
+ */
 struct inp_in : public cadmium::in_port<Message_t>{};
 
-/*
- *SETING OUTPUT PORTS FOR messages
-**/
+/**
+ * SETING OUTPUT PORTS FOR messages
+ */
 struct outp_out: public cadmium::out_port<Message_t>{};
 
 
 /**
- *This is application generator class 
- *that take parameter as a file path
- *and wait  for @tparam[in] T messsage input
+ * This is application generator class 
+ * that take parameter as a file path
+ * and wait  for @tparam[in] T messsage input
  */
 
 template<typename T>
