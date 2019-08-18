@@ -32,7 +32,9 @@
 #include <limits>
 #include <random>
 
-//updated the relative path
+/**
+* updated the relative path
+*/
 #include "../data_structures/message.hpp"
 
 using namespace cadmium;
@@ -47,13 +49,16 @@ struct subnet_defs{
     struct in : public in_port<Message_t> {
     };
 };
-//This is a meta-model, it should be overloaded for declaring the "id" parameter
+/**
+* This is a meta-model, it should be overloaded for declaring the "id" parameter
+*/
 template<typename TIME>
 class Subnet{
-    using defs=subnet_defs; // putting definitions in context
+    using defs=subnet_defs; /** putting definitions in context */
     public:
-    //Parameters to be overwriten when instantiating the atomic model
-           
+    /**
+    * Parameters to be overwriten when instantiating the atomic model
+    */       
     /**
     * Default constructor for the subnet class.
     * Initializes state structure of transmiting to false
@@ -74,7 +79,9 @@ class Subnet{
         int index;
     }; 
     state_type state;
-    // Initializing input/output ports
+    /** 
+    * Initializing input/output ports
+    */
     using input_ports=std::tuple<typename defs::in>;
     using output_ports=std::tuple<typename defs::out>;
 
