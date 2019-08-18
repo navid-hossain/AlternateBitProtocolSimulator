@@ -33,23 +33,23 @@ using TIME = NDTime;
 
 
 /**
-  * SETING INPUT PORTS FOR messages 
-*/
+ * SETING INPUT PORTS FOR messages 
+ */
 
 struct inp : public cadmium::in_port<Message_t>{};
 
 /** 
-  * SETING OUTPUT PORTS FOR messages 
-*/
+ * SETING OUTPUT PORTS FOR messages 
+ */
 
 
 struct outp : public cadmium::out_port<Message_t>{};
 
 /**
-* This is application generator class 
-* that take parameter as a file path
-* and wait  for @tparam[in] T messsage input
-*/
+ * This is application generator class 
+ * that take parameter as a file path
+ * and wait  for @tparam[in] T messsage input
+ */
 
 template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
@@ -78,7 +78,7 @@ int main(){
     static std::ofstream out_data("../test/data/receiver/receiver_test_output.txt");
     /**
      * The structure invoke the ostream which is the output stream and
-     *as a return the data store in the file
+     * as a return the data store in the file
      */
     struct oss_sink_provider{
        static std::ostream& sink(){          
@@ -86,10 +86,10 @@ int main(){
         }
 };
 /**
-* cadmium and Destimes library functions are used 
-* It generates the log files and as a variable it stores
-* and afte that log them all to the file
-*/
+ * cadmium and Destimes library functions are used 
+ * It generates the log files and as a variable it stores
+ * and afte that log them all to the file
+ */
 	
 using info=cadmium::logger::logger
     <cadmium::logger::logger_info, 
@@ -125,17 +125,17 @@ using log_all=cadmium::logger::multilogger
 using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 
 /**
-* For the receiver execution it get input file and
-* runs the execution for number of time based on input
-*/
+ * For the receiver execution it get input file and
+ * runs the execution for number of time based on input
+ */
 
 string input_data_control = "../test/data/receiver/receiver_input_test.txt";
 const char * i_input_data_control = input_data_control.c_str();
 	
 /**
-* In here application generator initialization occur and 
-* take output file, Time and based on input genrate output
-*/
+ * In here application generator initialization occur and 
+ * take output file, Time and based on input genrate output
+ */
 	
 std::shared_ptr<cadmium::dynamic::modeling::model> 
 generator = cadmium::dynamic::translate::make_dynamic_atomic_model
@@ -150,10 +150,10 @@ std::shared_ptr<cadmium::dynamic::modeling::model> receiver1 = cadmium::
 dynamic::translate::make_dynamic_atomic_model<Receiver, TIME>("receiver1");
 
 /**
-* In below all these are to store the value for 
-* simulation that will be run for a timme frame and 
-* and then store output accordingly
-*/
+ * In below all these are to store the value for 
+ * simulation that will be run for a timme frame and 
+ * and then store output accordingly
+ */
 	
 cadmium::dynamic::modeling::Ports iports_TOP = {};
 
@@ -184,9 +184,9 @@ TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>( "TOP",
                                                                  );
 
 /**
-* In here runner are created and  duration to 
-* generate runner time also measured in seconds. 
-*/
+ * In here runner are created and  duration to 
+ * generate runner time also measured in seconds. 
+ */
 auto elapsed1 = std::chrono::duration_cast<std::chrono::duration<double, 
 std::ratio<1>>>(hclock::now() - start).count();
 	
