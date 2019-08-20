@@ -19,9 +19,9 @@
 
 #include "../../include/data_structures/message.hpp"
 
-#include "../../include/atomics/senderCadmium.hpp"
-#include "../../include/atomics/receiverCadmium.hpp"
-#include "../../include/atomics/subnetCadmium.hpp"
+#include "../../include/atomics/sender_cadmium.hpp"
+#include "../../include/atomics/receiver_cadmium.hpp"
+#include "../../include/atomics/subnet_cadmium.hpp"
 
 
 using namespace std;
@@ -31,24 +31,24 @@ using TIME = NDTime;
 
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/
-struct inp_control : public cadmium::in_port<Message_t>{};
-struct inp_1 : public cadmium::in_port<Message_t>{};
-struct inp_2 : public cadmium::in_port<Message_t>{};
+struct inp_control : public cadmium::in_port<message_t>{};
+struct inp_1 : public cadmium::in_port<message_t>{};
+struct inp_2 : public cadmium::in_port<message_t>{};
 /***** SETING OUTPUT PORTS FOR COUPLEDs *****/
-struct outp_ack : public cadmium::out_port<Message_t>{};
-struct outp_1 : public cadmium::out_port<Message_t>{};
-struct outp_2 : public cadmium::out_port<Message_t>{};
-struct outp_pack : public cadmium::out_port<Message_t>{};
+struct outp_ack : public cadmium::out_port<message_t>{};
+struct outp_1 : public cadmium::out_port<message_t>{};
+struct outp_2 : public cadmium::out_port<message_t>{};
+struct outp_pack : public cadmium::out_port<message_t>{};
 
 
 /********************************************/
 /****** APPLICATION GENERATOR *******************/
 /********************************************/
 template<typename T>
-class ApplicationGen : public iestream_input<Message_t,T> {
+class ApplicationGen : public iestream_input<message_t,T> {
 public:
   ApplicationGen() = default;
-  ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
+  ApplicationGen(const char* file_path) : iestream_input<message_t,T>(file_path) {}
 };
 
 
@@ -183,7 +183,7 @@ cadmium::dynamic::modeling::EOCs eocs_TOP = {
 cadmium::dynamic::translate::make_EOC<outp_pack,outp_ack>("ABPSimulator")
 };
 cadmium::dynamic::modeling::ICs ics_TOP = {
-  cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::out,inp_control>("generator_con","ABPSimulator")
+  cadmium::dynamic::translate::make_IC<iestream_input_defs<message_t>::out,inp_control>("generator_con","ABPSimulator")
 };
 std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
  "TOP", 

@@ -25,11 +25,11 @@ using TIME = NDTime;
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/
 
-struct inp : public cadmium::in_port<Message_t>{};
+struct inp : public cadmium::in_port<message_t>{};
 
 /***** SETING OUTPUT PORTS FOR COUPLEDs *****/
 
-struct outp : public cadmium::out_port<Message_t>{};
+struct outp : public cadmium::out_port<message_t>{};
 
 
 /****************************/
@@ -37,11 +37,11 @@ struct outp : public cadmium::out_port<Message_t>{};
 /****************************/
 
 template<typename T>
-class ApplicationGen : public iestream_input<Message_t,T> {
+class ApplicationGen : public iestream_input<message_t,T> {
     public:
     ApplicationGen() = default;
     ApplicationGen(const char* file_path) : 
-    iestream_input<Message_t,T>(file_path){}
+    iestream_input<message_t,T>(file_path){}
 };
 
 
@@ -135,7 +135,7 @@ cadmium::dynamic::modeling::EOCs eocs_TOP = {
 };
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
-    cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::
+    cadmium::dynamic::translate::make_IC<iestream_input_defs<message_t>::
     out,receiver_defs::in>("generator","receiver1")
 };
 
