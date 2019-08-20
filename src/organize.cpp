@@ -110,49 +110,49 @@ void filter(FILE *input, FILE *output){
         }
         else{
             int count;
-	        for(count = strlen(l.line)-1;l.line[count]!=' ';count--)
-	        continue;
-	        count++;
-	        int i;
-	        for (i=0;count!=strlen(l.line);i++)
-	        text3[i] = l.line[count++];
-	        text3[i]='\0'; /**< Add null in the end of string */
+	    for(count = strlen(l.line)-1;l.line[count]!=' ';count--)
+	    continue;
+	    count++;
+	    int i;
+	    for (i=0;count!=strlen(l.line);i++)
+	    text3[i] = l.line[count++];
+	    text3[i]='\0'; /**< Add null in the end of string */
 
 
-	        int colon_count = 0;
-	        for(int i = 0;i<strlen(l.line);i++){
+	    int colon_count = 0;
+	    for(int i = 0;i<strlen(l.line);i++){
 		    
-		    /**
-		     * the loops run until it gets expected output
-		     * by comparing operators in OR logic and by using 
-	             * if else loop 
-		     */
+	     /**
+	      * the loops run until it gets expected output
+	      * by comparing operators in OR logic and by using 
+	      * if else loop 
+	      */
 
-	            if(CheckingChar(l.line[i],'[')|| CheckingChar(l.line[i],',')){
-                    colon_count=0;
-                    while(l.line[i]!=':' && l.line[i]!=']' )
-                    i++;
-                    i--;
-		            }
-                else if(CheckingChar(l.line[i],':')){
-                     if (colon_count==0 || colon_count==1){
-                            colon_count++;
-                            if (colon_count==1){
-                                i--;
-							}
-                        }
-                else if(colon_count==2){
-                    colon_count++;
-                    i++;
-                    count = 0;
-                    int j = 0;
-                while(l.line[i]!=':'){
-                    text1[count] = l.line[i];
-                    count++;
-                    i++;
-                }
-                    i--;
-                    text1[count]='\0';
+	     if(CheckingChar(l.line[i],'[')|| CheckingChar(l.line[i],',')){
+                 colon_count=0;
+                 while(l.line[i]!=':' && l.line[i]!=']' )
+                 i++;
+                 i--;
+	      }
+              else if(CheckingChar(l.line[i],':')){
+                  if (colon_count==0 || colon_count==1){
+                      colon_count++;
+                      if (colon_count==1){
+                       i--;
+		       }
+               }
+               else if(colon_count==2){
+                   colon_count++;
+                   i++;
+                   count = 0;
+                   int j = 0;
+                   while(l.line[i]!=':'){
+                       text1[count] = l.line[i];
+                       count++;
+                       i++;
+                   }
+                        i--;
+                        text1[count]='\0';
                 }
                 else if (colon_count==3){
                     while(l.line[i]!='{')
@@ -162,37 +162,37 @@ void filter(FILE *input, FILE *output){
                 }         
                 else{}
 			}
-				else if(CheckingChar(l.line[i],'{')){
-                        i++;
-                        count=0;
-                        while(l.line[i]!='}')
-                        text2[count++] = l.line[i++];
-                        text2[count] = '\0';
-                        i--;
-                        if(text2[0]!='\0'&& text2[0]>9){
+		else if(CheckingChar(l.line[i],'{')){
+                    i++;
+                    count=0;
+                    while(l.line[i]!='}')
+                    text2[count++] = l.line[i++];
+                    text2[count] = '\0';
+                    i--;
+                    if(text2[0]!='\0'&& text2[0]>9){
                         fprintf(out,"%s,%s,%s,%s\n",time,text2,text1,text3);
-                        }
+                     }
                 }
-				else if(CheckingChar(l.line[i],'}')){
+		else if(CheckingChar(l.line[i],'}')){
                     while(l.line[i]!=']' && l.line[i]!=',')
                     i++;
                     i--;
                 }
-				else if(CheckingChar(l.line[i],']')){
+		else if(CheckingChar(l.line[i],']')){
                     l = readline(fp);
                     flag=1;
                 }
-				else{
-				    /**<error if prints any other*/
-                     printf("%c",l.line[i]); 
+		else{
+		    /**<error if prints any other*/
+                    printf("%c",l.line[i]); 
                 }
                 if (flag==1){
                     flag=0;
                     break;
                 }
 
-			}
-		}
+	    }
+	}
     } 
 fclose(out);
 }
