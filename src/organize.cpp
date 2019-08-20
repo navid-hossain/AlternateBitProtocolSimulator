@@ -170,7 +170,7 @@ void filter(FILE *input, FILE *output){
                     i--;
                     colon_count=0;
                 }         
-                else{}
+                
 		
 		        else if(CheckingChar(l.line[i],'{')){
                     i++;
