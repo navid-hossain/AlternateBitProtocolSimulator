@@ -218,22 +218,20 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	
 	FILE *input;
 	FILE *output;
-	input = fopen("../data/abp_output.txt","r");
-	output = fopen("../data/abp_processed_output.csv","w");
+	
 	/**
-	 * the function taking input file &
-	 * transfering into output file 
-	 */
+	* the function taking input file &
+	* transfering into output file 
+	*/
 	filter(input,output);
 	
 	FILE *input2;
 	FILE *output2;
-	input2 = fopen("../data/abp_processed_output.csv","rb");
-	output2 = fopen("../data/abp_output_mod.txt","w");
+	
 	/**
-	 * the function taking input file &
-	 * transfering into output file 
-	 */
+	* the function taking input file &
+	* transfering into output file 
+	*/
 	
 	filter2(input2,output2);
 	

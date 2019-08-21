@@ -19,7 +19,11 @@ using namespace std;
 void filter2(FILE *input2, FILE *output2){
     FILE * fp;
     FILE * fp_out;
-    fp = input2;
+    
+	input2 = fopen("../data/abp_processed_output.csv","rb");
+	output2 = fopen("../data/abp_output_mod.txt","w");
+	
+	fp = input2;
     fp_out = output2;
 	
     fseek(fp, 0, SEEK_END);
