@@ -36,12 +36,16 @@ using TIME = NDTime;
  * SETING INPUT PORTS FOR messages 
  */
 
-struct inp : public cadmium::in_port<message_t>{};
+struct inp : public cadmium::in_port<Message_t>{};
 
 /** 
  * SETING OUTPUT PORTS FOR messages 
  */
 
+<<<<<<< HEAD
+=======
+struct outp : public cadmium::out_port<Message_t>{};
+>>>>>>> origin/master
 
 struct outp : public cadmium::out_port<message_t>{};
 
@@ -52,7 +56,7 @@ struct outp : public cadmium::out_port<message_t>{};
  */
 
 template<typename T>
-class ApplicationGen : public iestream_input<message_t,T> {
+class ApplicationGen : public iestream_input<Message_t,T> {
     public:
     ApplicationGen() = default;
     /**
@@ -62,7 +66,7 @@ class ApplicationGen : public iestream_input<message_t,T> {
      * @param[in] file_path
      */
     ApplicationGen(const char* file_path) : 
-    iestream_input<message_t,T>(file_path){}
+    iestream_input<Message_t,T>(file_path){}
 };
 
 
@@ -129,6 +133,17 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
  * runs the execution for number of time based on input
  */
 
+<<<<<<< HEAD
+=======
+/**************************/
+
+
+
+/**************************/
+/**APPLICATION GENERATOR **/
+/**************************/
+
+>>>>>>> origin/master
 string input_data_control = "../test/data/receiver/receiver_input_test.txt";
 const char * i_input_data_control = input_data_control.c_str();
 	

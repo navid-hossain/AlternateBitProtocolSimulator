@@ -147,10 +147,17 @@ cadmium::dynamic::modeling::EOCs eocs_TOP = {
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
   cadmium::dynamic::translate::
+<<<<<<< HEAD
   make_IC<iestream_input_defs<message_t>::
   out,sender_defs::controlIn>("generator_con","sender1"),
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<message_t>::
+=======
+  make_IC<iestream_input_defs<Message_t>::
+  out,sender_defs::controlIn>("generator_con","sender1"),
+  cadmium::dynamic::translate::
+  make_IC<iestream_input_defs<Message_t>::
+>>>>>>> origin/master
   out,sender_defs::ackIn>("generator_ack","sender1")
 };
 

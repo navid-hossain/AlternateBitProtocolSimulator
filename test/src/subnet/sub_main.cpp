@@ -125,6 +125,13 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
  * runs the execution for number of time based on input
  */
 
+<<<<<<< HEAD
+=======
+/********************************************/
+/****** APPLICATION GENERATOR ***************/
+/********************************************/
+
+>>>>>>> origin/master
 string input_data = "../test/data/subnet/subnet_input_test.txt";
 const char * i_input_data = input_data.c_str();
 
