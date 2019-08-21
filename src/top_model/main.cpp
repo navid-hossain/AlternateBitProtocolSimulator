@@ -216,24 +216,21 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
     auto elapsed = std::chrono::duration_cast<std::chrono::duration<double, std::ratio<1>>>(hclock::now() - start).count();
     cout << "Simulation took:" << elapsed << "sec" << endl;
 	
-	FILE *input;
-	FILE *output;
-	
-	/**
-	* the function taking input file &
-	* transfering into output file 
-	*/
-	filter(input,output);
-	
-	FILE *input2;
-	FILE *output2;
-	
+	char input_file[] = "../data/abp_output.txt";
+	char output_file[] = "../data/abp_processed_output.csv";
 	/**
 	* the function taking input file &
 	* transfering into output file 
 	*/
 	
-	filter2(input2,output2);
+	filter(input_file,output_file);
+
+	/**
+	* the function taking input file &
+	* transfering into output file 
+	*/
 	
-        return 0;
+	filter2(input_file,output_file);
+	
+    return 0;
 }

@@ -16,15 +16,12 @@
 
 using namespace std;
 
-void filter2(FILE *input2, FILE *output2){
+void filter2(char input_file[], char output_file[]){
     FILE * fp;
     FILE * fp_out;
-    
-	input2 = fopen("../data/abp_processed_output.csv","rb");
-	output2 = fopen("../data/abp_output_mod.txt","w");
 	
-	fp = input2;
-    fp_out = output2;
+	fp = fopen(input_file,"r");
+    fp_out = fopen(output_file,"w");
 	
     fseek(fp, 0, SEEK_END);
     long size = ftell(fp);
