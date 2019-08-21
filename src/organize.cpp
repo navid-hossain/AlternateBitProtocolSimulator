@@ -88,7 +88,11 @@ void filter(FILE *input, FILE *output){
     struct merge_line l2;
     FILE *fp;  /**< input file pointer variable initialization */
     FILE *out; /**< Output file pointer variable initialization */ 
-    fp=input;  /**< storing input file */ 
+    
+	input = fopen("../data/abp_output.txt","r");
+	output = fopen("../data/abp_processed_output.csv","w");
+	
+	fp=input;  /**< storing input file */ 
     out=output; /**< storing output file */
     char ch;
     char *str;
