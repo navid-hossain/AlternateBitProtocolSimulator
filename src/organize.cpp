@@ -89,7 +89,7 @@ void filter(FILE *input, FILE *output){
     FILE *fp;  /**< input file pointer variable initialization */
     FILE *out; /**< Output file pointer variable initialization */ 
     fp=input;  /**< storing input file */ 
-    out=output; /*< storing output file */
+    out=output; /**< storing output file */
     char ch;
     char *str;
     int count = 0; /**< variable to count */
@@ -149,7 +149,7 @@ void filter(FILE *input, FILE *output){
                             i--;
 						}
 			        }
-                }
+                
                 else if(colon_count==2){
                     colon_count++;
                     i++;
@@ -170,8 +170,8 @@ void filter(FILE *input, FILE *output){
                     i--;
                     colon_count=0;
                 }         
-                
-		
+                else {}
+				}
 		        else if(CheckingChar(l.line[i],'{')){
                     i++;
                     count=0;
