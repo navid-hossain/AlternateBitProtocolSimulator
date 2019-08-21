@@ -209,4 +209,5 @@ void filter(FILE *input, FILE *output){
 	    }
 	}	
     fclose(out);
+    fclose(fp);
 }
