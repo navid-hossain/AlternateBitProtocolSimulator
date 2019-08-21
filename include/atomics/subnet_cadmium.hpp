@@ -32,7 +32,9 @@
 #include <limits>
 #include <random>
 
-//updated the relative path
+/**
+* updated the relative path
+*/
 #include "../data_structures/message.hpp"
 
 using namespace cadmium;
@@ -42,18 +44,21 @@ using namespace std;
 * Structure Port definition for input and output messages.
 */
 struct subnet_defs{
-    struct out : public out_port<message_t> {
+    struct out : public out_port<Message_t> {
     };
-    struct in : public in_port<message_t> {
+    struct in : public in_port<Message_t> {
     };
 };
-//This is a meta-model, it should be overloaded for declaring the "id" parameter
+/**
+* This is a meta-model, it should be overloaded for declaring the "id" parameter
+*/
 template<typename TIME>
 class Subnet{
-    using defs=subnet_defs; // putting definitions in context
+    using defs=subnet_defs; /** putting definitions in context */
     public:
-    //Parameters to be overwriten when instantiating the atomic model
-           
+    /**
+    * Parameters to be overwriten when instantiating the atomic model
+    */       
     /**
     * Default constructor for the subnet class.
     * Initializes state structure of transmiting to false
@@ -74,7 +79,9 @@ class Subnet{
         int index;
     }; 
     state_type state;
-    // Initializing input/output ports
+    /** 
+    * Initializing input/output ports
+    */
     using input_ports=std::tuple<typename defs::in>;
     using output_ports=std::tuple<typename defs::out>;
 
@@ -128,7 +135,7 @@ class Subnet{
     */
     typename make_message_bags<output_ports>::type output() const {
         typename make_message_bags<output_ports>::type bags;
-        message_t out;
+        Message_t out;
         if ((double)rand() / (double) RAND_MAX  < 0.95){
             out.value = state.packet;
             get_messages<typename defs::out>(bags).push_back(out);
@@ -157,7 +164,13 @@ class Subnet{
         }    
         return next_internal;
     }
-
+    
+    /**
+    * Function that outputs acknowledge number to ostring stream.
+    * @param os the ostring stream
+    * @param i structure state_type
+    * @return os the ostring stream
+    */
     friend std::ostringstream& operator<<(std::ostringstream& os, 
 			                  const typename Subnet<TIME>::state_type& i) {
         os << "index: " << i.index << " & transmiting: " << i.transmiting; 

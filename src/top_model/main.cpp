@@ -22,11 +22,14 @@
 #include "../../include/atomics/sender_cadmium.hpp"
 #include "../../include/atomics/receiver_cadmium.hpp"
 #include "../../include/atomics/subnet_cadmium.hpp"
+<<<<<<< HEAD
 
 
 #define MAIN_OUTPUT "../data/abp_output.txt"
 
 #include "../organize.cpp"
+=======
+>>>>>>> origin/master
 
 
 using namespace std;
@@ -68,7 +71,7 @@ int main(int argc, char ** argv) {
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../data/abp_output.txt");
+  static std::ofstream out_data("data/abp_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;

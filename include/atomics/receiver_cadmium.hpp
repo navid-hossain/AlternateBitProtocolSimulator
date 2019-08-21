@@ -41,9 +41,9 @@ using namespace std;
 * Structure that holds input and output messages.
 */
 struct receiver_defs{
-    struct out : public out_port<message_t> {
+    struct out : public out_port<Message_t> {
     };
-    struct in : public in_port<message_t> {
+    struct in : public in_port<Message_t> {
     };
 };
 
@@ -52,10 +52,12 @@ struct receiver_defs{
 */   
 template<typename TIME>
 class Receiver{
-    using defs=receiver_defs; // putting definitions in context
+    using defs=receiver_defs; /** putting definitions in context */
     public:
-        //Parameters to be overwriten when instantiating the atomic model
-        TIME   PREPARATION_TIME;
+        /**
+	* Parameters to be overwriten when instantiating the atomic model
+        */
+	TIME   PREPARATION_TIME;
         
 	/** 
 	* Constructor for Receiver class.
@@ -76,8 +78,10 @@ class Receiver{
         }; 
         state_type state;
             
-	// definition of different ports
-        using input_ports=std::tuple<typename defs::in>;
+	/**
+	* definition of different ports
+        */
+	using input_ports=std::tuple<typename defs::in>;
         using output_ports=std::tuple<typename defs::out>;
 
         /**
@@ -129,7 +133,7 @@ class Receiver{
 	*/
         typename make_message_bags<output_ports>::type output() const {
             typename make_message_bags<output_ports>::type bags;
-            message_t out;              
+            Message_t out;              
             out.value = state.ack_num % 10;
             get_messages<typename defs::out>(bags).push_back(out);
             return bags;
