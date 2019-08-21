@@ -14,7 +14,7 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../../../lib/vendor/NDTime.hpp"
+#include "../../../lib/DESTimes/include/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 #include "../../../include/data_structures/message.hpp"
 #include "../../../include/atomics/sender_cadmium.hpp"
@@ -97,14 +97,22 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 /****** APPLICATION GENERATOR ***************/
 /********************************************/
 
+<<<<<<< HEAD
+string input_data_control = "../../data/sender/sender_input_test_control_In.txt";
+=======
 string input_data_control = "../test/data/sender/sender_input_test_control_In.txt";
+>>>>>>> origin/master
 const char * i_input_data_control = input_data_control.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_con = 
 cadmium::dynamic::translate::make_dynamic_atomic_model<ApplicationGen, 
 TIME, const char* >("generator_con" , std::move(i_input_data_control));
 
+<<<<<<< HEAD
+string input_data_ack = "../../data/sender/sender_input_test_ack_In.txt";
+=======
 string input_data_ack = "../test/data/sender/sender_input_test_ack_In.txt";
+>>>>>>> origin/master
 const char * i_input_data_ack = input_data_ack.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_ack = 
@@ -153,10 +161,17 @@ cadmium::dynamic::modeling::ICs ics_TOP = {
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<message_t>::
 =======
+<<<<<<< HEAD
+  make_IC<iestream_input_defs<message_t>::
+  out,sender_defs::controlIn>("generator_con","sender1"),
+  cadmium::dynamic::translate::
+  make_IC<iestream_input_defs<message_t>::
+=======
   make_IC<iestream_input_defs<Message_t>::
   out,sender_defs::controlIn>("generator_con","sender1"),
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<Message_t>::
+>>>>>>> origin/master
 >>>>>>> origin/master
   out,sender_defs::ackIn>("generator_ack","sender1")
 };

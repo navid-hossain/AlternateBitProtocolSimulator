@@ -22,7 +22,7 @@
 #include <cadmium/logger/tuple_to_ostream.hpp>
 #include <cadmium/logger/common_loggers.hpp>
 
-#include "../../../lib/vendor/NDTime.hpp"
+#include "../../../lib/DESTimes/include/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 #include "../../../include/data_structures/message.hpp"
 #include "../../../include/atomics/receiver_cadmium.hpp"
@@ -50,21 +50,37 @@ struct outp : public cadmium::out_port<Message_t>{};
 struct outp : public cadmium::out_port<message_t>{};
 
 /**
+<<<<<<< HEAD
+* This is application generator class 
+* that take parameter as a file path
+* and wait  for @tparam[in] T messsage input
+*/
+=======
  * This is application generator class 
  * that take parameter as a file path
  * and wait  for @tparam[in] T messsage input
  */
+>>>>>>> origin/master
 
 template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
     public:
     ApplicationGen() = default;
+<<<<<<< HEAD
+	/**
+	* It is a parameterized constructor for application generator class in which
+	* from file path it takes input of the path of the file that has input 
+	* for application to run
+	* @param[in] file_path
+	*/
+=======
     /**
      * It is a parameterized constructor for application generator class in which
      * from file path it takes input of the path of the file that has input 
      * for application to run
      * @param[in] file_path
      */
+>>>>>>> origin/master
     ApplicationGen(const char* file_path) : 
     iestream_input<Message_t,T>(file_path){}
 };
@@ -137,12 +153,15 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 =======
 /**************************/
 
+<<<<<<< HEAD
+=======
 
 
 /**************************/
 /**APPLICATION GENERATOR **/
 /**************************/
 
+>>>>>>> origin/master
 >>>>>>> origin/master
 string input_data_control = "../test/data/receiver/receiver_input_test.txt";
 const char * i_input_data_control = input_data_control.c_str();

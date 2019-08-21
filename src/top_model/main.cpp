@@ -14,7 +14,7 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../../lib/vendor/NDTime.hpp"
+#include "../../lib/DESTimes/include/NDTime.hpp"
 #include "../../lib/vendor/iestream.hpp"
 
 #include "../../include/data_structures/message.hpp"
@@ -22,6 +22,14 @@
 #include "../../include/atomics/sender_cadmium.hpp"
 #include "../../include/atomics/receiver_cadmium.hpp"
 #include "../../include/atomics/subnet_cadmium.hpp"
+<<<<<<< HEAD
+
+
+#define MAIN_OUTPUT "../data/abp_output.txt"
+
+#include "../organize.cpp"
+=======
+>>>>>>> origin/master
 
 
 using namespace std;
@@ -209,5 +217,16 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
     r.run_until(NDTime("04:00:00:000"));
     auto elapsed = std::chrono::duration_cast<std::chrono::duration<double, std::ratio<1>>>(hclock::now() - start).count();
     cout << "Simulation took:" << elapsed << "sec" << endl;
+	
+	char input_file[] = "../data/abp_output.txt";
+	char output_file[] = "../data/abp_processed_output.csv";
+	
+	/**
+	 * the function taking input file and
+	 * transferring it into output file
+	 */
+	
+	filter(input_file,output_file);
+	
     return 0;
 }
