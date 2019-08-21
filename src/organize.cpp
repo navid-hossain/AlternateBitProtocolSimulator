@@ -80,7 +80,7 @@ int CheckingChar(char a, char b){
 * @param [out] for raw output text file
 */
 
-void filter(FILE *input, FILE *output){
+void filter(char input_file[], char output_file[]){
     fpos_t line_pos;
     fpos_t temp_pos;
 
@@ -88,12 +88,9 @@ void filter(FILE *input, FILE *output){
     struct merge_line l2;
     FILE *fp;  /**< input file pointer variable initialization */
     FILE *out; /**< Output file pointer variable initialization */ 
-    
-	input = fopen("../data/abp_output.txt","r");
-	output = fopen("../data/abp_processed_output.csv","w");
 	
-	fp=input;  /**< storing input file */ 
-    out=output; /**< storing output file */
+	fp=fopen(input_file,"r");  /**< storing input file */ 
+    out=fopen(output_file,"w"); /**< storing output file */
     char ch;
     char *str;
     int count = 0; /**< variable to count */
