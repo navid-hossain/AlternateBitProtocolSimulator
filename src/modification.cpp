@@ -35,7 +35,9 @@ void filter2(char input_file[], char output_file[]){
     */
     char* pch;
     pch = strtok(pData, ",");
-    float counter = 0.0, counter1 = 0.0, counter2 = 0.0, pkt_loss = 0.0, pkt_loss_percnt = 0.0;
+    float counter = 0.0, counter1 = 0.0, 
+	  counter2 = 0.0, pkt_loss = 0.0, pkt_loss_percnt = 0.0;
+	
     int rounding = 0;
 	
     while(pch != NULL){
@@ -60,17 +62,26 @@ void filter2(char input_file[], char output_file[]){
         pch = strtok(NULL, ",");
     }
     
-    fprintf(fp_out,"\nThe total number of packets sent, dataOut = %f\n",counter);
-    fprintf(fp_out,"\nThe total number of acknowledgements received, ackReceivedOut = %f\n",counter1);
-    fprintf(fp_out,"\nThe total number of packets generated, packetSentOut= %f\n",counter2);
+    fprintf(fp_out,"\nThe total number of packets sent, 
+	                            dataOut = %f\n",counter);
+	    
+    fprintf(fp_out,"\nThe total number of acknowledgements received, 
+	                            ackReceivedOut = %f\n",counter1);
+	    
+    fprintf(fp_out,"\nThe total number of packets generated, 
+	                            packetSentOut= %f\n",counter2);
+	    
     /** 
     * Calculating the total number of packet loss
     */
+	    
     pkt_loss = counter - counter1;
     fprintf(fp_out,"\nThe total number of packets lost = %f\n",pkt_loss);
+	    
     /**
     * Calculating the percentage of packet loss
     */
+	    
     pkt_loss_percnt = (pkt_loss/counter2)*100;
     rounding = round(pkt_loss_percnt);
     fprintf(fp_out,"\nThe percentage of packets that are lost = %d%%\n",rounding);
