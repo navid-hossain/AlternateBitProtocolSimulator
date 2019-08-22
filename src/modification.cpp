@@ -62,14 +62,11 @@ void filter2(char input_file[], char output_file[]){
         pch = strtok(NULL, ",");
     }
     
-    fprintf(fp_out,"\nThe total number of packets sent, 
-	                            dataOut = %f\n",counter);
+    fprintf(fp_out,"\nThe total number of packets sent, dataOut = %f\n",counter);
 	    
-    fprintf(fp_out,"\nThe total number of acknowledgements received, 
-	                            ackReceivedOut = %f\n",counter1);
+    fprintf(fp_out,"\nThe total number of acknowledgements received, ackReceivedOut = %f\n",counter1);
 	    
-    fprintf(fp_out,"\nThe total number of packets generated, 
-	                            packetSentOut= %f\n",counter2);
+    fprintf(fp_out,"\nThe total number of packets generated packetSentOut= %f\n",counter2);
 	    
     /** 
     * Calculating the total number of packet loss

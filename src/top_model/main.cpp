@@ -230,7 +230,9 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	* transfering into output file 
 	*/
 	
-	filter2(input_file,output_file);
+	char output_file2[] = "../data/abp_output_mod.txt";
+	
+	filter2(output_file,output_file2);
 	
     return 0;
 }
