@@ -20,7 +20,7 @@ void filter2(char input_file[], char output_file[]){
     FILE * fp;
     FILE * fp_out;
 	
-	fp = fopen(input_file,"r");
+    fp = fopen(input_file,"r");
     fp_out = fopen(output_file,"w");
 	
     fseek(fp, 0, SEEK_END);
