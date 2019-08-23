@@ -35,26 +35,29 @@ void filter2(char input_file[], char output_file[]){
     */
     char* pch;
     pch = strtok(pData, ",");
-    float counter = 0.0, counter1 = 0.0, 
-	  counter2 = 0.0, pkt_loss = 0.0, pkt_loss_percnt = 0.0;
+    float counter = 0.0, counter1 = 0.0; 
+	float counter2 = 0.0, pkt_loss = 0.0, pkt_loss_percnt = 0.0;
 	
     int rounding = 0;
 	
     while(pch != NULL){
-        /** 
-	* Incrementing the counter everytime string matches with "dataOut"
+    /** 
+	* Incrementing the counter everytime 
+	* string matches with "dataOut"
 	*/
         if (strcmp(pch,"dataOut")==0){
             counter++;
 	}
 	/** 
-	* Incrementing the counter1 everytime string matches with "ackReceivedOut"
+	* Incrementing the counter1 everytime 
+	* string matches with "ackReceivedOut"
 	*/
         if (strcmp(pch,"ackReceivedOut")==0){
             counter1++;
 	}
 	/** 
-	* Incrementing the counter2 everytime string matches with "packetSentOut"
+	* Incrementing the counter2 everytime 
+	* string matches with "packetSentOut"
 	*/
         if (strcmp(pch,"packetSentOut")==0){
             counter2++;
@@ -62,11 +65,14 @@ void filter2(char input_file[], char output_file[]){
         pch = strtok(NULL, ",");
     }
     
-    fprintf(fp_out,"\nThe total number of packets sent, dataOut = %f\n",counter);
+    fprintf(fp_out,"\nThe total number"
+	    " of packets sent, dataOut = %f\n",counter);
 	    
-    fprintf(fp_out,"\nThe total number of acknowledgements received, ackReceivedOut = %f\n",counter1);
+    fprintf(fp_out,"\nThe total number of acknowledgements" 
+	    " received, ackReceivedOut = %f\n",counter1);
 	    
-    fprintf(fp_out,"\nThe total number of packets generated packetSentOut= %f\n",counter2);
+    fprintf(fp_out,"\nThe total number of packets" 
+	    " generated packetSentOut= %f\n",counter2);
 	    
     /** 
     * Calculating the total number of packet loss
