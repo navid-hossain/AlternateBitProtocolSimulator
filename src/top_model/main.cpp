@@ -146,9 +146,9 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> NETWORK = std::make_s
  ics_Network 
   );
 
-/************************/
+/***************************/
 /*******ABPSimulator********/
-/************************/
+/***************************/
 cadmium::dynamic::modeling::Ports iports_ABPSimulator = {typeid(inp_control)};
 cadmium::dynamic::modeling::Ports oports_ABPSimulator = {typeid(outp_ack),typeid(outp_pack)};
 cadmium::dynamic::modeling::Models submodels_ABPSimulator = {sender1, receiver1,NETWORK};
