@@ -79,57 +79,66 @@
 ---
 **alternatebitprotocol.doc contains the explanation of this simulator**
        
- 1. Run the unit test
-       
-2.1  Run subnet test
-
- 2.1.1 Open the terminal. Press in your keyboard Ctrl+Alt+t
  
- 2.1.2 Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
+ 1. Initialize the git-submodules in the main project directory
+ 
+    1.1 open the terminal. Press in your keyboard       Ctrl+Alt+t
+    
+    1.2 In the terminal, enter:      git submodule init
+    
+    1.3 If you want to update, enter:        git submodule init
+ 
+ 2. Run the unit test
+       
+3.1  Run subnet test
+
+ 3.1.1 Open the terminal. Press in your keyboard Ctrl+Alt+t
+ 
+ 3.1.2 Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >			Example: cd Documents/AlternateBitProtocol
 
- 2.1.3. To compile the test, type in the terminal:
+ 3.1.3. To compile the test, type in the terminal:
 >			make clean; make all
 
- 2.1.4. To run the test, change directory to bin folder where the executables are located. For example: cd bin. type in the terminal                        
+ 3.1.4. To run the test, change directory to bin folder where the executables are located. For example: cd bin. type in the terminal                        
 >     "./NAME_OF_THE_COMPILED_FILE". For this specific test you need to type:     ./SUBNET_TEST
 
- 2.1.5.  To check the output of the test, open               
+ 3.1.5.  To check the output of the test, open               
 >                      "test/data/subnet/subnet_test_output.txt"
 
-2.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
+3.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
 
-3. Run the simulator
+4. Run the simulator
    1. Open the terminal. Press in your keyboard Ctrl+Alt+t
    
    2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >		          Example: cd Documents/AlternateBitProtocol
-4. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
+5. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
 >	              ./bin/ABP ../data/input_abp_0.txt
 
-5. To check the output of the simulation, open  "data/abp_output.txt"
+6. To check the output of the simulation, open  "data/abp_output.txt"
 
-6. To check the modified output of the simulator, open "data/abp_processed_output.csv"
+7. To check the modified output of the simulator, open "data/abp_processed_output.csv"
 
-7. To check the percentage of packets lost, open "data/abp_output_mod.txt"
+8. To check the percentage of packets lost, open "data/abp_output_mod.txt"
 
-8. To check the modified output of the receiver, open "test/data/receiver/abp_processed_output_receiver.csv"
+9. To check the modified output of the receiver, open "test/data/receiver/abp_processed_output_receiver.csv"
 
-9. To check the percentage of packets lost of receiver, open "test/data/receiver/abp_output_mod_receiver.txt"
+10. To check the percentage of packets lost of receiver, open "test/data/receiver/abp_output_mod_receiver.txt"
 
-10. To check the modified output of the sender, open "test/data/sender/abp_processed_output_sender.csv"
+11. To check the modified output of the sender, open "test/data/sender/abp_processed_output_sender.csv"
 
-11. To check the percentage of packets lost of sender, open "test/data/sender/abp_output_mod_sender.txt"
+12. To check the percentage of packets lost of sender, open "test/data/sender/abp_output_mod_sender.txt"
 
-12. To check the modified output of the subnet, open "test/data/subnet/abp_processed_output_subnet.csv"
+13. To check the modified output of the subnet, open "test/data/subnet/abp_processed_output_subnet.csv"
 
-13. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
+14. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
 
-14. To execute the simulator with different inputs
+15. To execute the simulator with different inputs
 
- 14.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+ 15.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
  
- 14.2. Run the simulator using the instructions in step 4
+ 15.2. Run the simulator using the instructions in step 4
  
- 14.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
+ 15.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
 >		         Example: mv abp_output.txt abp_output_0.txt
