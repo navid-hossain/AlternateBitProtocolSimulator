@@ -79,28 +79,20 @@ int CheckingChar(char a, char b){
 * @param [in] for raw input text file
 * @param [out] for raw output text file
 */
-<<<<<<< HEAD
+
 
 void filter(char input_file[], char output_file[]){
     fpos_t line_pos;
     fpos_t temp_pos;
 
-=======
 
-void filter(char input_file[], char output_file[]){
-    fpos_t line_pos;
-    fpos_t temp_pos;
-
->>>>>>> origin/master
     struct merge_line l;
     struct merge_line l2;
     FILE *fp;  /**< input file pointer variable initialization */
     FILE *out; /**< Output file pointer variable initialization */ 
-<<<<<<< HEAD
+
 		
-=======
-	
->>>>>>> origin/master
+
 	fp=fopen(input_file,"r");  /**< storing input file */ 
     out=fopen(output_file,"w"); /**< storing output file */
     char ch;
@@ -222,9 +214,7 @@ void filter(char input_file[], char output_file[]){
 	    }
 	}	
     fclose(out);
-<<<<<<< HEAD
+
     fclose(fp);
-=======
-    fclose(fp);	
->>>>>>> origin/master
+
 }

@@ -36,61 +36,35 @@ using hclock=chrono::high_resolution_clock;
 using TIME = NDTime;
 
 
-<<<<<<< HEAD
-/*
-* SETING INPUT PORTS FOR messages
-**/
-struct inp_in : public cadmium::in_port<message_t>{};
 
-/* SETING OUTPUT PORTS FOR messages
-**/
-<<<<<<< HEAD
-=======
-=======
 /**
- * SETING INPUT PORTS FOR messages
- */
+* SETING INPUT PORTS FOR messages
+*/
 struct inp_in : public cadmium::in_port<message_t>{};
 
 /**
  * SETING OUTPUT PORTS FOR messages
  */
->>>>>>> origin/master
->>>>>>> origin/master
+
 struct outp_out: public cadmium::out_port<message_t>{};
 
 
 /**
-<<<<<<< HEAD
-*This is application generator class 
-*that take parameter as a file path
-*and wait  for @tparam[in] T messsage input
+* This is application generator class 
+* that take parameter as a file path
+* and wait  for @tparam[in] T messsage input
 */
-=======
- * This is application generator class 
- * that take parameter as a file path
- * and wait  for @tparam[in] T messsage input
- */
->>>>>>> origin/master
 
 template<typename T>
 class ApplicationGen : public iestream_input<message_t,T> {
     public:
     ApplicationGen() = default;
     /**
-<<<<<<< HEAD
     * It is a parameterized constructor for application generator class in 
     * which from file path it takes input of the path of the file that has input 
     * for application to run
     * @param[in] file_path
     */
-=======
-     * It is a parameterized constructor for application generator class in 
-     * which from file path it takes input of the path of the file that has input 
-     * for application to run
-     * @param[in] file_path
-     */
->>>>>>> origin/master
     ApplicationGen(const char* file_path) : 
 	iestream_input<message_t,T>(file_path) {}
 };
@@ -156,16 +130,11 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
  * runs the execution for number of time based on input
  */
 
-<<<<<<< HEAD
-=======
+
 /********************************************/
 /****** APPLICATION GENERATOR ***************/
 /********************************************/
 
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 string input_data = "../test/data/subnet/subnet_input_test.txt";
 const char * i_input_data = input_data.c_str();
 
