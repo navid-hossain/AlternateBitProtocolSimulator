@@ -1,0 +1,14 @@
+time,value,port,component
+00:00:10:000,11,out,generator
+00:00:20:000,1,out,receiver1
+00:00:30:000,20,out,generator
+00:00:40:000,0,out,receiver1
+00:00:45:000,31,out,generator
+00:00:52:000,31,out,generator
+00:01:02:000,1,out,receiver1
+00:01:25:000,40,out,generator
+00:01:35:000,40,out,generator
+00:01:35:000,0,out,receiver1
+00:01:45:000,0,out,receiver1
+00:01:55:000,51,out,generator
+00:02:05:000,1,out,receiver1

@@ -27,6 +27,9 @@
 #include "../../../include/data_structures/message.hpp"
 #include "../../../include/atomics/subnet_cadmium.hpp"
 
+#include "../../../src/organize.cpp"
+#include "../../../src/modification.cpp"
+
 using namespace std;
 
 using hclock=chrono::high_resolution_clock;
@@ -203,6 +206,24 @@ auto elapsed = std::chrono::duration_cast<std::
 chrono::duration<double, std::ratio<1>>>(hclock::now() - start).count();
 	
 cout << "Simulation took:" << elapsed << "sec" << endl;
+
+char input_file[] = "../test/data/subnet/subnet_test_output.txt";
+char output_file[] = "../test/data/subnet/abp_processed_output_subnet.csv";
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+filter(input_file,output_file);
+
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+char output_file2[] = "../test/data/subnet/abp_output_mod_subnet.txt";
+	
+filter2(output_file,output_file2);
 	
 return 0;
 }
