@@ -22,12 +22,18 @@
 #include "../../include/atomics/sender_cadmium.hpp"
 #include "../../include/atomics/receiver_cadmium.hpp"
 #include "../../include/atomics/subnet_cadmium.hpp"
+<<<<<<< HEAD
 
 
 #define MAIN_OUTPUT "../data/abp_output.txt"
 
 #include "../organize.cpp"
+<<<<<<< HEAD
 #include "../modification.cpp"
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 
 using namespace std;
@@ -69,7 +75,7 @@ int main(int argc, char ** argv) {
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../data/abp_output.txt");
+  static std::ofstream out_data("data/abp_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;
@@ -147,9 +153,9 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> NETWORK = std::make_s
  ics_Network 
   );
 
-/************************/
+/***************************/
 /*******ABPSimulator********/
-/************************/
+/***************************/
 cadmium::dynamic::modeling::Ports iports_ABPSimulator = {typeid(inp_control)};
 cadmium::dynamic::modeling::Ports oports_ABPSimulator = {typeid(outp_ack),typeid(outp_pack)};
 cadmium::dynamic::modeling::Models submodels_ABPSimulator = {sender1, receiver1,NETWORK};
@@ -218,6 +224,7 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	
 	char input_file[] = "../data/abp_output.txt";
 	char output_file[] = "../data/abp_processed_output.csv";
+<<<<<<< HEAD
 	/**
 	* the function taking input file &
 	* transfering into output file 
@@ -233,6 +240,15 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	char output_file2[] = "../data/abp_output_mod.txt";
 	
 	filter2(output_file,output_file2);
+=======
+	
+	/**
+	 * the function taking input file and
+	 * transferring it into output file
+	 */
+	
+	filter(input_file,output_file);
+>>>>>>> origin/master
 	
     return 0;
 }

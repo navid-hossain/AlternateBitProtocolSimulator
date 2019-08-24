@@ -52,10 +52,12 @@ struct receiver_defs{
 */   
 template<typename TIME>
 class Receiver{
-    using defs=receiver_defs; // putting definitions in context
+    using defs=receiver_defs; /** putting definitions in context */
     public:
-        //Parameters to be overwriten when instantiating the atomic model
-        TIME   PREPARATION_TIME;
+        /**
+	* Parameters to be overwriten when instantiating the atomic model
+        */
+	TIME   PREPARATION_TIME;
         
 	/** 
 	* Constructor for Receiver class.
@@ -76,8 +78,10 @@ class Receiver{
         }; 
         state_type state;
             
-	// definition of different ports
-        using input_ports=std::tuple<typename defs::in>;
+	/**
+	* definition of different ports
+        */
+	using input_ports=std::tuple<typename defs::in>;
         using output_ports=std::tuple<typename defs::out>;
 
         /**
