@@ -28,7 +28,11 @@
 #define MAIN_OUTPUT "../data/abp_output.txt"
 
 #include "../organize.cpp"
+<<<<<<< HEAD
+#include "../modification.cpp"
 =======
+=======
+>>>>>>> origin/master
 >>>>>>> origin/master
 
 
@@ -220,6 +224,23 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	
 	char input_file[] = "../data/abp_output.txt";
 	char output_file[] = "../data/abp_processed_output.csv";
+<<<<<<< HEAD
+	/**
+	* the function taking input file &
+	* transfering into output file 
+	*/
+	
+	filter(input_file,output_file);
+
+	/**
+	* the function taking input file &
+	* transfering into output file 
+	*/
+	
+	char output_file2[] = "../data/abp_output_mod.txt";
+	
+	filter2(output_file,output_file2);
+=======
 	
 	/**
 	 * the function taking input file and
@@ -227,6 +248,7 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	 */
 	
 	filter(input_file,output_file);
+>>>>>>> origin/master
 	
     return 0;
 }

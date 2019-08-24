@@ -27,6 +27,9 @@
 #include "../../../include/data_structures/message.hpp"
 #include "../../../include/atomics/receiver_cadmium.hpp"
 
+#include "../../../src/organize.cpp"
+#include "../../../src/modification.cpp"
+
 using namespace std;
 using hclock=chrono::high_resolution_clock;
 using TIME = NDTime;
@@ -36,7 +39,7 @@ using TIME = NDTime;
  * SETING INPUT PORTS FOR messages 
  */
 
-struct inp : public cadmium::in_port<Message_t>{};
+struct inp : public cadmium::in_port<message_t>{};
 
 /** 
  * SETING OUTPUT PORTS FOR messages 
@@ -44,9 +47,12 @@ struct inp : public cadmium::in_port<Message_t>{};
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 struct outp : public cadmium::out_port<Message_t>{};
 >>>>>>> origin/master
 
+>>>>>>> origin/master
 struct outp : public cadmium::out_port<message_t>{};
 
 /**
@@ -63,7 +69,7 @@ struct outp : public cadmium::out_port<message_t>{};
 >>>>>>> origin/master
 
 template<typename T>
-class ApplicationGen : public iestream_input<Message_t,T> {
+class ApplicationGen : public iestream_input<message_t,T> {
     public:
     ApplicationGen() = default;
 <<<<<<< HEAD
@@ -82,7 +88,7 @@ class ApplicationGen : public iestream_input<Message_t,T> {
      */
 >>>>>>> origin/master
     ApplicationGen(const char* file_path) : 
-    iestream_input<Message_t,T>(file_path){}
+    iestream_input<message_t,T>(file_path){}
 };
 
 
@@ -241,6 +247,24 @@ auto elapsed = std::chrono::duration_cast<std::chrono::duration<double,
 std::ratio<1>>>(hclock::now() - start).count();
 	
 cout << "Simulation took:" << elapsed << "sec" << endl;
+
+char input_file[] = "../test/data/receiver/receiver_test_output.txt";
+char output_file[] = "../test/data/receiver/abp_processed_output_receiver.csv";
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+filter(input_file,output_file);
+
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+char output_file2[] = "../test/data/receiver/abp_output_mod_receiver.txt";
+	
+filter2(output_file,output_file2);
 	
 return 0;
 }

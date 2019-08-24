@@ -19,6 +19,9 @@
 #include "../../../include/data_structures/message.hpp"
 #include "../../../include/atomics/sender_cadmium.hpp"
 
+#include "../../../src/organize.cpp"
+#include "../../../src/modification.cpp"
+
 using namespace std;
 
 using hclock=chrono::high_resolution_clock;
@@ -167,10 +170,17 @@ cadmium::dynamic::modeling::ICs ics_TOP = {
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<message_t>::
 =======
+<<<<<<< HEAD
+  make_IC<iestream_input_defs<message_t>::
+  out,sender_defs::controlIn>("generator_con","sender1"),
+  cadmium::dynamic::translate::
+  make_IC<iestream_input_defs<message_t>::
+=======
   make_IC<iestream_input_defs<Message_t>::
   out,sender_defs::controlIn>("generator_con","sender1"),
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<Message_t>::
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
   out,sender_defs::ackIn>("generator_ack","sender1")
@@ -209,6 +219,24 @@ auto elapsed = std::chrono::duration_cast<std::chrono::duration<double,
 std::ratio<1>>>(hclock::now() - start).count();
 	
 cout << "Simulation took:" << elapsed << "sec" << endl;
+
+char input_file[] = "../test/data/sender/sender_test_output.txt";
+char output_file[] = "../test/data/sender/abp_processed_output_sender.csv";
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+filter(input_file,output_file);
+
+/**
+* the function taking input file &
+* transfering into output file 
+*/
+	
+char output_file2[] = "../test/data/sender/abp_output_mod_sender.txt";
+	
+filter2(output_file,output_file2);
 	
 return 0;
 }

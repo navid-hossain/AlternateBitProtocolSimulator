@@ -28,6 +28,9 @@ using namespace std;
 
 //Port definition
     struct sender_defs{
+<<<<<<< HEAD
+        struct packetSentOut : public out_port<message_t> {
+=======
 <<<<<<< HEAD:include/atomics/sender_cadmium.hpp
         struct packetSentOut : public out_port<message_t> {
 =======
@@ -37,6 +40,7 @@ using namespace std;
         struct packetSentOut : public out_port<Message_t> {
 >>>>>>> origin/master:include/atomics/senderCadmium.hpp
 >>>>>>> origin/master:include/atomics/senderCadmium.hpp
+>>>>>>> origin/master
         };
         struct ackReceivedOut : public out_port<message_t> {
         };
