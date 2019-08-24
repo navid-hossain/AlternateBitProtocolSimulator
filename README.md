@@ -26,13 +26,13 @@
 #### **Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
 ---
 ### File Management
-<<<<<<< HEAD
+
 1. src [This folder contains the source code for the message and top model, organize.cpp and modification.cpp for modifying the output]
-=======
-1. src [This folder contains the source code for the message and top model and organize.cpp for modifying the output]
->>>>>>> origin/master
+
 2. data_structures [Contains the source code for the top message]
+
 3. top_model [Contains the source code for the top_model]
+
 4. lib [This folder contains the third party header files]
    
    4.1 cadmium [contains cadmium files]
@@ -126,10 +126,12 @@
 3.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
 
 4. Run the simulator
-   1. Open the terminal. Press in your keyboard Ctrl+Alt+t
+
+   4.1. Open the terminal. Press in your keyboard Ctrl+Alt+t
    
-   2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
+   4.2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >		          Example: cd Documents/AlternateBitProtocol
+
 5. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
 >	              ./bin/ABP ../data/input_abp_0.txt
 
@@ -151,7 +153,6 @@
 
 14. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
 
-<<<<<<< HEAD
 15. To execute the simulator with different inputs
 
  15.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
@@ -159,15 +160,4 @@
  15.2. Run the simulator using the instructions in step 4
  
  15.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
-=======
-6. To chech the modified output of the simulator, open "data/abp_processed_output.csv"
-
-7. To execute the simulator with different inputs
-
- 7.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
- 
- 7.2. Run the simulator using the instructions in step 4
- 
- 7.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
->>>>>>> origin/master
->		         Example: mv abp_output.txt abp_output_0.txt
+  >    Example: mv abp_outoput.txt abp_outpot_0.txt
