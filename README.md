@@ -109,15 +109,27 @@
 
 5. To check the output of the simulation, open  "data/abp_output.txt"
 
-6. To chech the modified output of the simulator, open "data/abp_processed_output.csv"
+6. To check the modified output of the simulator, open "data/abp_processed_output.csv"
 
 7. To check the percentage of packets lost, open "data/abp_output_mod.txt"
 
-8. To execute the simulator with different inputs
+8. To check the modified output of the receiver, open "test/data/receiver/abp_processed_output_receiver.csv"
 
- 8.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+9. To check the percentage of packets lost of receiver, open "test/data/receiver/abp_output_mod_receiver.txt"
+
+10. To check the modified output of the sender, open "test/data/sender/abp_processed_output_sender.csv"
+
+11. To check the percentage of packets lost of sender, open "test/data/sender/abp_output_mod_sender.txt"
+
+12. To check the modified output of the subnet, open "test/data/subnet/abp_processed_output_subnet.csv"
+
+13. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
+
+14. To execute the simulator with different inputs
+
+ 14.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
  
- 8.2. Run the simulator using the instructions in step 4
+ 14.2. Run the simulator using the instructions in step 4
  
- 8.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
+ 14.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
 >		         Example: mv abp_output.txt abp_output_0.txt
