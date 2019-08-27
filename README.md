@@ -107,57 +107,57 @@
  
  2. Run the unit test
        
-3.1  Run subnet test
+2.1  Run subnet test
 
- 3.1.1 Open the terminal. Press in your keyboard Ctrl+Alt+t
+ 2.1.1 Open the terminal. Press in your keyboard Ctrl+Alt+t
  
- 3.1.2 Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
+ 2.1.2 Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >			Example: cd Documents/AlternateBitProtocol
 
- 3.1.3. To compile the test, type in the terminal:
+ 2.1.3. To compile the test, type in the terminal:
 >			make clean; make all
 
- 3.1.4. To run the test, change directory to bin folder where the executables are located. For example: cd bin. type in the terminal                        
+ 2.1.4. To run the test, change directory to bin folder where the executables are located. For example: cd bin. type in the terminal                        
 >     "./NAME_OF_THE_COMPILED_FILE". For this specific test you need to type:     ./SUBNET_TEST
 
- 3.1.5.  To check the output of the test, open               
+ 2.1.5.  To check the output of the test, open               
 >                      "test/data/subnet/subnet_test_output.txt"
 
-3.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
+2.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
 
-4. Run the simulator
+3. Run the simulator
 
-   4.1. Open the terminal. Press in your keyboard Ctrl+Alt+t
+   3.1. Open the terminal. Press in your keyboard Ctrl+Alt+t
    
-   4.2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
+   3.2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >		          Example: cd Documents/AlternateBitProtocol
 
-5. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
+4. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
 >	              ./bin/ABP ../data/input_abp_0.txt
 
-6. To check the output of the simulation, open  "data/abp_output.txt"
+5. To check the output of the simulation, open  "data/abp_output.txt"
 
-7. To check the modified output of the simulator, open "data/abp_processed_output.csv"
+6. To check the modified output of the simulator, open "data/abp_processed_output.csv"
 
-8. To check the percentage of packets lost, open "data/abp_output_mod.txt"
+7. To check the percentage of packets lost, open "data/abp_output_mod.txt"
 
-9. To check the modified output of the receiver, open "test/data/receiver/abp_processed_output_receiver.csv"
+8. To check the modified output of the receiver, open "test/data/receiver/abp_processed_output_receiver.csv"
 
-10. To check the percentage of packets lost of receiver, open "test/data/receiver/abp_output_mod_receiver.txt"
+9. To check the percentage of packets lost of receiver, open "test/data/receiver/abp_output_mod_receiver.txt"
 
-11. To check the modified output of the sender, open "test/data/sender/abp_processed_output_sender.csv"
+10. To check the modified output of the sender, open "test/data/sender/abp_processed_output_sender.csv"
 
-12. To check the percentage of packets lost of sender, open "test/data/sender/abp_output_mod_sender.txt"
+11. To check the percentage of packets lost of sender, open "test/data/sender/abp_output_mod_sender.txt"
 
-13. To check the modified output of the subnet, open "test/data/subnet/abp_processed_output_subnet.csv"
+12. To check the modified output of the subnet, open "test/data/subnet/abp_processed_output_subnet.csv"
 
-14. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
+13. To check the percentage of packets lost of subnet, open "test/data/subnet/abp_output_mod_subnet.txt"
 
-15. To execute the simulator with different inputs
+14. To execute the simulator with different inputs
 
- 15.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+ 14.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
  
- 15.2. Run the simulator using the instructions in step 4
+ 14.2. Run the simulator using the instructions in step 4
  
- 15.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
+ 14.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
   >    Example: mv abp_outoput.txt abp_outpot_0.txt
