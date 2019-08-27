@@ -1,5 +1,5 @@
 # Ignore any executables
-bin/*
+bin/*.exe
 
 # Ignore object files
-build/*
+build/*.o
